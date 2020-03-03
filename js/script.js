@@ -51,6 +51,24 @@ const showPage = (list, page) => {
    functionality to the pagination buttons.
 ***/
 
+const appendPageLinks = (list) => {
+  const pgsNeeded = studentList.length/numPerPage;
+  const pagesDiv = document.createElement('div');
+  const parent = document.querySelector('.page');
+  const ul = document.createElement('ul');
+  pagesDiv.className = 'pagination';
+  parent.appendChild(pagesDiv);
+  pagesDiv.appendChild(ul);
+
+  for (let i = 0; i < pgsNeeded; i += 1) {
+    const li = document.createElement('li');
+    const a = document.createElement('a');
+    ul.appendChild(li);
+    li.appendChild(a);
+    a.href = '#';
+    a.text = i + 1;
+    }
+};
 
 
 // Remember to delete the comments that came with this file, and replace them with your own code comments.
